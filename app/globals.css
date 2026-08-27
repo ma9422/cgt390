@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --ink: #16140f;
+  --paper: #f5f1ec;
+  --pink: #ff3d7f;
+  --lime: #d8ff3d;
+  --line: rgba(22, 20, 15, 0.16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Inter', sans-serif; }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; font: inherit; }
+.ticker { overflow: hidden; padding: 0.55rem 1.5rem; background: var(--pink); border-bottom: 2px solid var(--ink); color: white; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-align: center; }
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
+nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; max-width: 1440px; margin: 0 auto; padding: 1rem 1.6rem; }
+.category-nav, .utility-nav { display: flex; align-items: center; gap: 1rem; }
+.category-nav a, .utility-nav button { border: 0; background: transparent; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.category-nav a:hover, .utility-nav button:hover { color: var(--pink); }
+.category-nav a.active { color: var(--pink); border-bottom: 2px solid var(--pink); }
+.logo { font-family: 'Anton', sans-serif; font-size: 1.8rem; text-transform: lowercase; }
+.logo span { color: var(--pink); }
+.hero { min-height: calc(100vh - 7rem); padding: clamp(5rem, 14vw, 12rem) max(1.6rem, 8vw) 5rem; background: repeating-linear-gradient(135deg, transparent 0 28px, rgba(255, 61, 127, 0.08) 28px 30px), var(--ink); color: white; }
+.eyebrow { display: inline-block; padding: 0.35rem 0.7rem; background: var(--lime); color: var(--ink); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+h1 { max-width: 800px; margin: 1.5rem 0; font-family: 'Anton', sans-serif; font-size: clamp(4rem, 12vw, 10rem); font-weight: 400; line-height: 0.86; text-transform: uppercase; }
+h1 span { display: block; color: var(--pink); }
+.hero-copy { max-width: 34rem; color: rgba(255, 255, 255, 0.72); line-height: 1.6; }
+.hero-link { display: inline-block; margin-top: 1.4rem; padding-bottom: 0.35rem; border-bottom: 2px solid var(--lime); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.catalog-page { max-width: 1440px; margin: 0 auto; padding: 3rem 1.6rem 6rem; }
+.catalog-intro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: 2rem 0 3rem; border-bottom: 2px solid var(--ink); }
+.catalog-intro h1 { margin: 1rem 0 0; color: var(--ink); font-size: clamp(4rem, 10vw, 8rem); }
+.catalog-description { max-width: 22rem; margin: 0 0 0.75rem; line-height: 1.5; }
+.catalog-toolbar { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--line); font-family: 'Space Mono', monospace; font-size: 0.72rem; text-transform: uppercase; }
+.sort-form { display: flex; align-items: center; gap: 0.5rem; }
+.sort-form select, .sort-form button { border: 0; background: transparent; cursor: pointer; font: inherit; text-transform: inherit; }
+.sort-form select { max-width: 10rem; font-weight: 700; }
+.sort-form button { border-bottom: 1px solid var(--pink); color: var(--pink); font-weight: 800; }
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem 1rem; padding-top: 1.5rem; }
+.product-media { position: relative; display: flex; aspect-ratio: 3 / 4; align-items: end; justify-content: center; overflow: hidden; border: 1.5px solid var(--ink); background: linear-gradient(150deg, var(--card-a), var(--card-b)); }
+.media-wordmark { margin-bottom: 17%; color: rgba(255, 255, 255, 0.7); font-family: 'Anton', sans-serif; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: 0.04em; transform: rotate(-8deg); }
+.sale-label, .product-flag { position: absolute; top: 0.7rem; padding: 0.3rem 0.5rem; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.sale-label { left: 0.7rem; background: var(--ink); color: var(--lime); }
+.product-flag { right: 0.7rem; border: 1px solid var(--ink); background: white; }
+.product-info { display: flex; justify-content: space-between; gap: 0.5rem; padding-top: 0.65rem; }
+.product-info h2 { margin: 0; font-size: 0.82rem; font-weight: 600; line-height: 1.3; }
+.product-price { display: flex; flex-shrink: 0; gap: 0.45rem; font-size: 0.8rem; }
+.product-price span { color: var(--pink); font-weight: 800; }
+.product-price s { opacity: 0.5; }
+@media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } .catalog-intro { align-items: start; flex-direction: column; } }
+@media (max-width: 520px) { .catalog-page { padding-inline: 1rem; } .product-info { display: block; } .product-price { margin-top: 0.35rem; } }
+@media (max-width: 900px) { .category-nav { display: none; } nav { padding-inline: 1rem; } .utility-nav { gap: 0.6rem; } }
