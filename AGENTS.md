@@ -24,8 +24,7 @@ SLAY is a fictional fashion e-commerce prototype using Next.js, TypeScript, Verc
 ## Implementation Steps
 
 1. **Initialize the Next.js foundation**
-	- Keep the existing HTML prototypes in `Assignment1/` as reference material.
-	- Maintain the runnable app at the repository root.
+	- Keep the runnable Next.js app at the repository root.
 	- Confirm `npm run build` succeeds before moving on.
 
 2. **Migrate the SLAY homepage**
