@@ -1,4 +1,5 @@
 import { StoreHeader } from '@/components/store-header';
+import { RequestInfoButton } from '@/components/request-info-button';
 
 export default function HomePage() {
   return (
@@ -13,9 +14,12 @@ export default function HomePage() {
         <p className="hero-copy">
           The storefront is now running on Next.js and TypeScript. The full catalog and Supabase connection come next.
         </p>
-        <a className="hero-link" href="#catalog">
-          Explore the drop <span aria-hidden="true">-&gt;</span>
-        </a>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <a className="hero-link" href="#catalog">
+            Explore the drop <span aria-hidden="true">-&gt;</span>
+          </a>
+          <RequestInfoButton />
+        </div>
       </section>
     </main>
   );
