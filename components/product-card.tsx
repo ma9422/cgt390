@@ -13,10 +13,15 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="product-card">
-      <a href={`/products/${product.slug}`} className="product-media" style={cardStyle}>
+      <a
+        href={`/products/${product.slug}`}
+        className="product-media"
+        style={cardStyle}
+        aria-label={`${product.name}: ${product.description}`}
+      >
         <span className="sale-label">50% OFF</span>
         {product.flag && <span className="product-flag">{product.flag}</span>}
-        <span className="media-wordmark">STYLED</span>
+        <span className="media-wordmark" aria-hidden="true">STYLED</span>
       </a>
       <div className="product-info">
         <h2><a href={`/products/${product.slug}`}>{product.name}</a></h2>

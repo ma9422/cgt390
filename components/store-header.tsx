@@ -6,10 +6,10 @@ const categories: [string, string, MenuEntry[]][] = [
   ['Jeans', '/collections/jeans', ['All Jeans', 'Baggy Jeans', 'Flared Jeans', 'Bootcut Jeans', 'Straight Jeans', 'Wide Jeans', 'Barrell Jeans']],
   ['Tops', '#', ['All tops', 'Crop tops', 'Tank tops', 'Halter tops', 'T-shirts', 'Corsets', 'Strapless & tube tops', 'Long sleeve tops', 'Denim tops', 'Graphic tops', 'Bodysuits', 'Knitted tops']],
   ['Bottoms', '#', ['All Bottoms', 'Pants', 'Skirts & Skorts', 'Shorts', 'Sweatpants', 'Leggings', 'Cargo Pants', { label: 'Shop By Fit', items: ['Swimwear', 'Petite', 'Tall', 'Intimates', 'Loungewear', 'Sleepwear'] }]],
-  ['Dresses', '#', ['All Dresses', 'Mini dresses', 'Maxi dresses', 'Cut out dresses', 'Long sleeve dresses', 'LBD', 'Romper dresses', 'Graduation dresses', 'Homecoming dresses']],
+  ['Dresses', '/dresses', ['All Dresses', 'Mini dresses', 'Maxi dresses', 'Cut out dresses', 'Long sleeve dresses', 'LBD', 'Romper dresses', 'Graduation dresses', 'Homecoming dresses']],
   ['Sets', '#', []],
   ['Outerwear', '#', ['All outerwear', 'Hoodies', 'Sweaters', 'Cardigans', 'Jackets & coats']],
-  ['Accessories', '#', ['All accessories', 'Barbie™ By Styled', 'Edikted Pets', 'Socks & tights', 'Hats & scarves', 'Sunglasses', 'Necklaces', 'Belly chains', 'Bracelets', 'Rings', 'Earrings', 'Belts', 'Bags', 'Hair accessories', 'Fun stuff']],
+  ['Accessories', '#', ['All accessories', 'Barbie™ By Styled', 'Styled Pets', 'Socks & tights', 'Hats & scarves', 'Sunglasses', 'Necklaces', 'Belly chains', 'Bracelets', 'Rings', 'Earrings', 'Belts', 'Bags', 'Hair accessories', 'Fun stuff']],
   ['Trending', '#', ['Star Treatment', 'Denim', 'Off Duty', 'Back to School', 'Summer society', 'Soccer club', 'IG shop', 'Homecoming', 'Party Looks', 'Going Out']],
   ['SALE', '#', ['All sale', 'Sale tops', 'Sale pants', 'Sale dresses', 'Sale skirts', 'Sale outerwear', 'Sale accessories', '70-80% off items', 'Online warehouse sale']],
 ];
@@ -22,6 +22,10 @@ const canonicalUrls: Record<string, string> = {
 };
 
 function getSubcategoryHref(label: string) {
+  if (label === 'Maxi dresses') {
+    return '/maxi-dresses';
+  }
+
   if (canonicalUrls[label]) {
     return canonicalUrls[label];
   }

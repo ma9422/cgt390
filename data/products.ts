@@ -74,6 +74,7 @@ export const products: Product[] = [
 ];
 
 export const newInProducts = products.filter((product) => product.flag === 'Just In' || product.flag === 'Back In Stock');
+export const dressProducts = products.filter((product) => product.category === 'Dresses');
 
 export type ProductSort = 'featured' | 'price-low' | 'price-high' | 'name';
 
