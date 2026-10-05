@@ -10,18 +10,25 @@ declare global {
     gtag?: (
       command: 'event',
       eventName: string,
-      eventParams: {
-        currency: string;
-        value: number;
-        items: {
+      eventParams:
+        | {
           item_id: string;
           item_name: string;
           item_category: string;
           item_variant: string;
-          price: number;
-          quantity: number;
-        }[];
-      },
+        }
+        | {
+          currency: string;
+          value: number;
+          items: {
+            item_id: string;
+            item_name: string;
+            item_category: string;
+            item_variant: string;
+            price: number;
+            quantity: number;
+          }[];
+        },
     ) => void;
   }
 }
@@ -59,6 +66,16 @@ export function AddToCartButton({ product }: { product: Product }) {
     setShowConfirmation(true);
   }
 
+  function handleSizeChange(selectedSize: string) {
+    setSize(selectedSize);
+    window.gtag?.('event', 'size_selected', {
+      item_id: product.id,
+      item_name: product.name,
+      item_category: product.category,
+      item_variant: selectedSize,
+    });
+  }
+
   return (
     <>
       <div className="add-to-cart">
@@ -66,7 +83,7 @@ export function AddToCartButton({ product }: { product: Product }) {
         <select
           id="product-size"
           value={size}
-          onChange={(event) => setSize(event.target.value)}
+          onChange={(event) => handleSizeChange(event.target.value)}
           disabled={!isReady || product.sizes.length === 0}
         >
           {product.sizes.map((productSize) => (
