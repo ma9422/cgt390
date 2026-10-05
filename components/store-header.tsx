@@ -5,7 +5,7 @@ type MenuEntry = string | { label: string; items: string[] };
 
 const categories: [string, string, MenuEntry[]][] = [
   ['New In', '/new-in', ['All New In', 'New This Week', 'New in Tops', 'New in Pants', 'New in Dresses', 'New in Sets']],
-  ['Best Sellers', '/collections/best-sellers', ['Best Sellers', 'Best selling tops', 'Best selling pants', 'Best selling dresses', 'Best selling skirts', 'Best selling outerwear', 'Back in stock']],
+  ['Best Sellers', '/collections/best-sellers', ['Best selling tops', 'Best selling pants', 'Best selling dresses', 'Best selling skirts', 'Best selling outerwear', 'Back in stock']],
   ['Jeans', '/collections/jeans', ['All Jeans', 'Baggy Jeans', 'Flared Jeans', 'Bootcut Jeans', 'Straight Jeans', 'Wide Jeans', 'Barrell Jeans']],
   ['Tops', '#', ['All tops', 'Crop tops', 'Tank tops', 'Halter tops', 'T-shirts', 'Corsets', 'Strapless & tube tops', 'Long sleeve tops', 'Denim tops', 'Graphic tops', 'Bodysuits', 'Knitted tops']],
   ['Bottoms', '#', ['All Bottoms', 'Pants', 'Skirts & Skorts', 'Shorts', 'Sweatpants', 'Leggings', 'Cargo Pants', { label: 'Shop By Fit', items: ['Swimwear', 'Petite', 'Tall', 'Intimates', 'Loungewear', 'Sleepwear'] }]],
