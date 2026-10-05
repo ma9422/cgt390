@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { CartBagLink } from '@/components/cart-bag-link';
+
 type MenuEntry = string | { label: string; items: string[] };
 
 const categories: [string, string, MenuEntry[]][] = [
@@ -59,12 +62,12 @@ export function StoreHeader() {
               </details>
             ))}
           </div>
-          <a className="logo" href="/" aria-label="Styled home">
+          <Link className="logo" href="/" aria-label="Styled home">
             styl<span>ed.</span>
-          </a>
+          </Link>
           <div className="utility-nav" aria-label="Store tools">
             <button type="button" aria-label="Search">Search</button>
-            <button type="button" aria-label="Shopping bag">Bag (0)</button>
+            <CartBagLink />
           </div>
         </nav>
       </header>

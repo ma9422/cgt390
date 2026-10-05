@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { CartProvider } from '@/components/cart-provider';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <CartProvider>{children}</CartProvider>
+      </body>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-4JK3DB02WY" strategy="afterInteractive" />
       <Script id="ga-init" strategy="afterInteractive">
         {`
