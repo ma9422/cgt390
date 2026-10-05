@@ -5,6 +5,27 @@ import Link from 'next/link';
 import type { Product } from '@/types/product';
 import { useCart } from '@/components/cart-provider';
 
+declare global {
+  interface Window {
+    gtag?: (
+      command: 'event',
+      eventName: string,
+      eventParams: {
+        currency: string;
+        value: number;
+        items: {
+          item_id: string;
+          item_name: string;
+          item_category: string;
+          item_variant: string;
+          price: number;
+          quantity: number;
+        }[];
+      },
+    ) => void;
+  }
+}
+
 export function AddToCartButton({ product }: { product: Product }) {
   const { addToCart, isReady } = useCart();
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -23,6 +44,18 @@ export function AddToCartButton({ product }: { product: Product }) {
     }
 
     addToCart(product.slug, size);
+    window.gtag?.('event', 'add_to_cart', {
+      currency: 'USD',
+      value: product.price,
+      items: [{
+        item_id: product.id,
+        item_name: product.name,
+        item_category: product.category,
+        item_variant: size,
+        price: product.price,
+        quantity: 1,
+      }],
+    });
     setShowConfirmation(true);
   }
 
