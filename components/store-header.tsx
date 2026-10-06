@@ -67,6 +67,7 @@ export function StoreHeader() {
           </Link>
           <div className="utility-nav" aria-label="Store tools">
             <button type="button" aria-label="Search">Search</button>
+            <Link className="account-link" href="/account">Account</Link>
             <CartBagLink />
           </div>
         </nav>

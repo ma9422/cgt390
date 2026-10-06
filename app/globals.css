@@ -116,8 +116,32 @@ h1 span { display: block; color: var(--pink); }
 .prototype-note { margin: 0; }
 .checkout-submit { width: 100%; }
 .checkout-loading { padding: 3rem 0; text-align: center; }
+.account-link { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.account-link:hover { color: var(--pink); }
+.account-page { display: grid; min-height: calc(100vh - 8rem); grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.9fr); }
+.account-art { position: relative; display: flex; min-height: 38rem; flex-direction: column; justify-content: center; overflow: hidden; padding: clamp(2rem, 7vw, 7rem); background: repeating-linear-gradient(135deg, transparent 0 30px, rgba(255, 61, 127, 0.11) 30px 32px), var(--ink); color: white; }
+.account-art h1 { position: relative; z-index: 1; margin: 1.5rem 0 1rem; font-size: clamp(3.4rem, 7vw, 7rem); }
+.account-art h1 span { color: var(--lime); }
+.account-art > p:last-of-type { max-width: 25rem; color: rgba(255, 255, 255, 0.75); line-height: 1.6; }
+.account-art-mark { position: absolute; right: -1rem; bottom: -8rem; color: rgba(255, 61, 127, 0.18); font-family: 'Anton', sans-serif; font-size: clamp(18rem, 38vw, 38rem); line-height: 1; }
+.account-panel { display: flex; width: min(100%, 34rem); flex-direction: column; justify-content: center; justify-self: center; padding: clamp(2rem, 5vw, 5rem); }
+.account-panel h2 { margin: 1.25rem 0 0.5rem; font-family: 'Anton', sans-serif; font-size: clamp(2.4rem, 4vw, 3.5rem); font-weight: 400; line-height: 1; text-transform: uppercase; }
+.account-description { margin: 0; color: rgba(22, 20, 15, 0.72); font-size: 0.9rem; line-height: 1.5; }
+.account-tabs { display: grid; grid-template-columns: 1fr 1fr; margin: 2rem 0 1.5rem; border-bottom: 1px solid var(--line); }
+.account-tabs button { min-height: 3rem; border: 0; border-bottom: 2px solid transparent; background: transparent; cursor: pointer; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.account-tabs button[aria-pressed="true"] { border-bottom-color: var(--pink); color: var(--pink); }
+.account-form { display: grid; gap: 1rem; }
+.account-form label { display: grid; gap: 0.45rem; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.account-form input { width: 100%; min-height: 3rem; padding: 0.75rem; border: 1px solid var(--ink); border-radius: 0; background: white; color: var(--ink); font: inherit; font-size: 0.88rem; }
+.account-form input:focus-visible, .account-tabs button:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+.account-form input::placeholder { color: rgba(22, 20, 15, 0.45); }
+.account-prototype-note { margin: 0; padding: 0.8rem; border-left: 3px solid var(--pink); background: rgba(255, 61, 127, 0.08); font-size: 0.75rem; line-height: 1.5; }
+.account-submit { width: 100%; }
+.account-message { margin: 0; color: #286124; font-size: 0.8rem; line-height: 1.5; }
+.account-message-error { color: #a52142; }
 @media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } .catalog-intro { align-items: start; flex-direction: column; } }
 @media (max-width: 520px) { .catalog-page { padding-inline: 1rem; } .product-info { display: block; } .product-price { margin-top: 0.35rem; } }
 @media (max-width: 900px) { .category-nav { display: none; } nav { padding-inline: 1rem; } .utility-nav { gap: 0.6rem; } }
 @media (max-width: 760px) { .checkout-layout { grid-template-columns: 1fr; } .checkout-item { grid-template-columns: 4rem minmax(0, 1fr) 5rem; gap: 0.7rem; } .checkout-item-swatch { width: 4rem; } .checkout-line-total { grid-column: 2 / -1; justify-self: end; } }
 @media (max-width: 520px) { .add-to-cart { grid-template-columns: auto 1fr; } .add-to-cart .primary-button, .add-to-cart .cart-feedback { grid-column: 1 / -1; } .checkout-section-heading { align-items: start; flex-direction: column; } .checkout-address-row { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .account-page { grid-template-columns: 1fr; } .account-art { min-height: 19rem; padding: 2.5rem 1.5rem; } .account-art h1 { max-width: 34rem; font-size: clamp(3rem, 11vw, 5rem); } .account-art-mark { right: -0.5rem; bottom: -5rem; font-size: 18rem; } .account-panel { width: min(100%, 36rem); padding: 3rem 1.5rem; } }
