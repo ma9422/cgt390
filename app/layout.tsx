@@ -19,7 +19,7 @@ export default function RootLayout({
         <CartProvider>{children}</CartProvider>
       </body>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-4JK3DB02WY" strategy="afterInteractive" />
-      <Script id="ga-init" strategy="lazyOnHold">
+      <Script id="ga-init" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
