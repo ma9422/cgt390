@@ -18,7 +18,7 @@ export default function RootLayout({
       <body>
         <CartProvider>{children}</CartProvider>
       </body>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-4JK3DB02WY" strategy="afterInteractive" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-4JK3DB02WY" strategy="lazyOnload" />
       <Script id="ga-init" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
