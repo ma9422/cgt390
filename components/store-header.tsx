@@ -42,6 +42,29 @@ export function StoreHeader() {
       <div className="ticker">50% OFF SITEWIDE / FREE SHIPPING OVER $75 / NEW DROPS EVERY WEEK</div>
       <header className="site-header">
         <nav aria-label="Main navigation">
+          <details className="mobile-category-menu">
+            <summary className="mobile-menu-toggle">
+              <span className="mobile-menu-icon" aria-hidden="true"><span /><span /><span /></span>
+              <span>Menu</span>
+            </summary>
+            <div className="mobile-category-panel">
+              {categories.map(([label, href, subcategories]) => (
+                <section className="mobile-category-group" key={label}>
+                  <a className="mobile-category-link" href={href}>{label}</a>
+                  {subcategories.map((subcategory) => typeof subcategory === 'string' ? (
+                    <a href={getSubcategoryHref(subcategory)} key={subcategory}>{subcategory}</a>
+                  ) : (
+                    <div className="mobile-subcategory-group" key={subcategory.label}>
+                      <span>{subcategory.label}</span>
+                      {subcategory.items.map((item) => (
+                        <a href={getSubcategoryHref(item)} key={item}>{item}</a>
+                      ))}
+                    </div>
+                  ))}
+                </section>
+              ))}
+            </div>
+          </details>
           <div className="category-nav">
             {categories.map(([label, href, subcategories]) => (
               <details className="category-menu" key={label}>
