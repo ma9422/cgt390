@@ -139,7 +139,7 @@ h1 span { display: block; color: var(--pink); }
 .account-submit { width: 100%; }
 .account-message { margin: 0; color: #286124; font-size: 0.8rem; line-height: 1.5; }
 .account-message-error { color: #a52142; }
-@media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } .catalog-intro { align-items: start; flex-direction: column; } }
+@media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } .catalog-intro { align-items: stretch; flex-direction: column; } .catalog-intro > * { min-width: 0; } }
 @media (max-width: 520px) { .catalog-page { padding-inline: 1rem; } .product-info { display: block; } .product-price { margin-top: 0.35rem; } }
 @media (max-width: 900px) { .category-nav { display: none; } nav { padding-inline: 1rem; } .utility-nav { gap: 0.6rem; } }
 @media (max-width: 760px) { .checkout-layout { grid-template-columns: 1fr; } .checkout-item { grid-template-columns: 4rem minmax(0, 1fr) 5rem; gap: 0.7rem; } .checkout-item-swatch { width: 4rem; } .checkout-line-total { grid-column: 2 / -1; justify-self: end; } }
