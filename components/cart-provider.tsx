@@ -1,5 +1,6 @@
 'use client';
 
+import { products } from '@/data/products';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 export type CartItem = {
@@ -38,6 +39,12 @@ function isCartItem(value: unknown): value is CartItem {
     && value.quantity > 0;
 }
 
+function existsInCatalog(item: CartItem): boolean {
+  const product = products.find((p) => p.slug === item.productSlug);
+
+  return Boolean(product && product.sizes.includes(item.size));
+}
+
 export function CartProvider({ children }: Readonly<{ children: React.ReactNode }>) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isReady, setIsReady] = useState(false);
@@ -53,7 +60,7 @@ export function CartProvider({ children }: Readonly<{ children: React.ReactNode 
         if (!Array.isArray(parsedCart) || !parsedCart.every(isCartItem)) {
           setStorageError('Your saved bag could not be read. New changes will replace it.');
         } else {
-          setItems(parsedCart);
+          setItems(parsedCart.filter(existsInCatalog));
         }
       }
     } catch {
